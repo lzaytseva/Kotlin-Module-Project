@@ -4,13 +4,15 @@ class NoteSelectScreen(data: MutableList<Note>): Screen<Note>(data) {
     private val createNote: () -> Unit = {
         println("Введите имя заметки")
         val title = readln()
+
         println("Введите описание заметки")
         val body = readln()
+
         val note = Note(title, body)
         data.add(note)
-        menuOptions.add(menuOptions.lastIndex, Pair(note.title) { open(data.lastIndex) })
 
-
+        val index = data.lastIndex
+        updateMenu(note.title to { open(index) })
     }
 
     override fun buildMenuOptions() {

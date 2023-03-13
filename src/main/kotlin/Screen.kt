@@ -1,4 +1,5 @@
 abstract class Screen<T> (val data: MutableList<T>) {
+
     private var running = true
     val menuOptions = mutableListOf<Pair<String, () -> Unit>>()
 
@@ -14,6 +15,10 @@ abstract class Screen<T> (val data: MutableList<T>) {
     open fun buildMenuOptions() {
         data.forEachIndexed {index, elem -> menuOptions.add(Pair(elem.toString()) { open(index) }) }
         menuOptions.add(Pair("Выход", exit))
+    }
+
+    fun updateMenu(option: Pair<String, () -> Unit>) {
+        menuOptions.add(menuOptions.lastIndex, option)
     }
 
     abstract fun open(index: Int)

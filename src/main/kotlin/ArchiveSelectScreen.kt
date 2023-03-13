@@ -9,7 +9,7 @@ class ArchiveSelectScreen(data: MutableList<Archive>): Screen<Archive>(data) {
             else {
                 data.add(archive)
                 val index = data.lastIndex
-                menuOptions.add(menuOptions.lastIndex, Pair(archive.name) { open(index) })
+                updateMenu(archive.name to { open(index) })
                 break
             }
         }
@@ -27,5 +27,4 @@ class ArchiveSelectScreen(data: MutableList<Archive>): Screen<Archive>(data) {
     override fun open(index: Int) {
         NoteSelectScreen(data[index].notes).show()
     }
-
 }
