@@ -1,3 +1,5 @@
+package screens
+
 abstract class Screen<T> (val data: MutableList<T>) {
 
     private var running = true

@@ -1,3 +1,7 @@
+package screens
+
+import data.Note
+
 class NoteScreen(data: MutableList<Note>, private val index: Int): Screen<Note>(data) {
 
     override fun buildMenuOptions() {

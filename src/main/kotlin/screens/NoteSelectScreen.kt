@@ -1,3 +1,7 @@
+package screens
+
+import data.Note
+
 
 class NoteSelectScreen(data: MutableList<Note>): Screen<Note>(data) {
 

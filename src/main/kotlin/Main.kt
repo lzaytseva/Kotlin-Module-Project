@@ -1,6 +1,8 @@
+import data.Archive
+import screens.ArchiveSelectScreen
 
 fun main() {
-    println("Добро пожаловать (нет) в приложение 'Заметки'")
+    println("Добро пожаловать в приложение 'Заметки'")
     val archivesList = mutableListOf<Archive>()
     ArchiveSelectScreen(archivesList).show()
 }

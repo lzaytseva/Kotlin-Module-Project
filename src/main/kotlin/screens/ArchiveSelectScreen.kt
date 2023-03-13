@@ -1,3 +1,7 @@
+package screens
+
+import data.Archive
+
 class ArchiveSelectScreen(data: MutableList<Archive>): Screen<Archive>(data) {
 
     private val createArchive: () -> Unit = {
