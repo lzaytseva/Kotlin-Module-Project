@@ -11,7 +11,7 @@ class NoteSelectScreen(data: MutableList<Note>): Screen<Note>(data) {
         println("Введите имя заметки")
         while (true) {
             title = readln()
-            if (title.isBlank()) println("Введите непустой заголовое")
+            if (title.isBlank()) println("Введите непустой заголовок")
             else break
         }
 
