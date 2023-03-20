@@ -14,6 +14,6 @@ class NoteScreen(data: MutableList<Note>, private val index: Int): Screen<Note>(
     }
 
     override fun open(index: Int) {
-        println(data[index].getFullNote())
+        println(data[index])
     }
 }

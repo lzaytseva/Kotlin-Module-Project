@@ -1,6 +1,8 @@
 package screens
 
-abstract class Screen<T> (val data: MutableList<T>) {
+import menu.MenuOption
+
+abstract class Screen<T: MenuOption> (val data: MutableList<T>) {
 
     private var running = true
     val menuOptions = mutableListOf<Pair<String, () -> Unit>>()
@@ -15,7 +17,7 @@ abstract class Screen<T> (val data: MutableList<T>) {
     }
 
     open fun buildMenuOptions() {
-        data.forEachIndexed {index, elem -> menuOptions.add(Pair(elem.toString()) { open(index) }) }
+        data.forEachIndexed {index, elem -> menuOptions.add(Pair(elem.menuOption) { open(index) }) }
         menuOptions.add(Pair("Выход", exit))
     }
 
