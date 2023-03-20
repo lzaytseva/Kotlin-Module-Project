@@ -6,8 +6,14 @@ import data.Note
 class NoteSelectScreen(data: MutableList<Note>): Screen<Note>(data) {
 
     private val createNote: () -> Unit = {
+        var title: String
+
         println("Введите имя заметки")
-        val title = readln()
+        while (true) {
+            title = readln()
+            if (title.isBlank()) println("Введите непустой заголовое")
+            else break
+        }
 
         println("Введите описание заметки")
         val body = readln()
