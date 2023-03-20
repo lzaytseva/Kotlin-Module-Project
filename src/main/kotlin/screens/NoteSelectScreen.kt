@@ -16,7 +16,8 @@ class NoteSelectScreen(data: MutableList<Note>): Screen<Note>(data) {
         }
 
         println("Введите описание заметки")
-        val body = readln()
+        var body = readln()
+        if (body.isEmpty()) body = "<No description>"
 
         val note = Note(title, body)
         data.add(note)
